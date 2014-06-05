@@ -1,0 +1,6 @@
+<form role="form" id="register" method="post">
+   {% csrf_token %}<!-- cross site report forging,,,,,,,a way to secure from inputs-->
+   {{contactform.as_p}}<!-- dictionary ka key,as a paragraph-->
+   <input type="submit" name="submit" value="submit" />
+</form>
+

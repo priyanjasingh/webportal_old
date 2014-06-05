@@ -1,0 +1,25 @@
+
+      <form role="form"  method="post"
+	    enctype="multipart/form-data">
+	{% csrf_token %}
+	<!-- {{contactform.as_p}} -->
+	<!-- Success/Error messages -->
+	{% if messages %}
+	{% for message in messages %}
+	{% if message.tags == "success" %}
+	<p class="text-info" align="center"><strong>{{ message }}</strong></p>
+	{% else %}
+	<p class="text-danger" align="center"><strong>{{ message }}</strong></p>
+	{% endif %}
+	{% endfor %}
+	{% endif %} 
+	<!-- Success/Error messages ends here -->
+        {{contactform.as_p}}
+	
+        <input type="submit" name="submit"
+	       value="Submit" />
+
+	<input type="reset" name="submit" 
+	       value="Reset" />
+      </form>
+   
